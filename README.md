@@ -8,4 +8,6 @@
 
 "#2016/10/26 gd_test_theano_learning_rate.py 比較不同learning rate的影響"
 
+"#2016/11/1 mk_batches.py 練習"
+
 memo, minibatch, adagrad,  XOR
