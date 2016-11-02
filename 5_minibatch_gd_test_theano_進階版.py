@@ -63,7 +63,8 @@ train = theano.function(inputs=[x, y_hat],
 
 # training
 cost_list = []
-for t in range(5):
+epoch = 5
+for t in range(epoch):
         cost_val = 0
         x_batches, y_batches = mk_batches(x_data, y_data, batch_size, True)
         batch_num = len(x_batches)
