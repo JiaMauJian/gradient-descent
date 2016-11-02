@@ -10,6 +10,6 @@
 
 "#2016/11/1 mk_batches.py 練習"
 
-"#2016/11/2 theano進階寫法練習"
+"#2016/11/2 theano進階寫法練習(all data/mini batch/sgd)"
 
 memo, adagrad,  XOR
