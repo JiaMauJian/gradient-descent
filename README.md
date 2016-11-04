@@ -22,5 +22,6 @@
 
 "# 不同learning rate的影響"
 * http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/Gradient%20Descent%20(v2).pdf
+* ![alt tag](http://cs231n.github.io/assets/nn3/learningrates.jpeg)
 
 
