@@ -38,7 +38,7 @@ x_data = floatX(np.array(np.linspace(-5.0, 5.0, 100)))
 y_data = floatX(np.array(x_data))
 
 ### params / init weights
-w = theano.shared(-1.)
+w = theano.shared(floatX(np.random.randn(1))[0])
     
 ### model
 x = T.vector()
@@ -68,7 +68,7 @@ epochs = 5
 
 for t in range(epochs): 
         all_cost = 0       
-        x_batches, y_batches = mk_batches(x_data, y_data, batch_size, False)        
+        x_batches, y_batches = mk_batches(x_data, y_data, batch_size, True)        
         batch_num = len(x_batches)
         for i in range(batch_num):        
             results = train(x_batches[i], y_batches[i])
