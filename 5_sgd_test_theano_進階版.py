@@ -48,6 +48,6 @@ for t in range(4):
         cost_list.append(cost_result[0])
 
 plt.plot(cost_list)
-plt.xlabel("No. of parameters updates")
+plt.xlabel("No. of parameters updates by sgd")
 plt.ylabel("Loss/Cost/Error")
 plt.show()
