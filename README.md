@@ -13,3 +13,6 @@
 "#2016/11/2 theano進階寫法練習(all data/mini batch/sgd)"
 
 memo, adagrad,  XOR
+
+"# mini batch"
+"* #http://stackoverflow.com/questions/38157972/how-to-implement-mini-batch-gradient-descent-in-python"
