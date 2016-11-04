@@ -12,12 +12,13 @@
 * XOR
 
 "# gradient desecnt / stochastic gradient descent"
-* http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/Regression%20(v6).pdf (對b的偏微分少乘-1，因為ppt動畫關係)
-* http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/Gradient%20Descent%20(v2).pdf
+* 怎麼做gd http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/Regression%20(v6).pdf (對b的偏微分少乘-1，因為ppt動畫關係)
+* 怎麼做sgd http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/Gradient%20Descent%20(v2).pdf
 
 "# mini batch"
 * 怎麼做mini batch #http://stackoverflow.com/questions/38157972/how-to-implement-mini-batch-gradient-descent-in-python
-* http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015_2/Lecture/DNN%20(v4).pdf
+* mini batch比較快? http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/Keras.pdf
+* mini batch比較快? http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015_2/Lecture/DNN%20(v4).pdf
 
 "# 不同learning rate的影響"
 * http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/Gradient%20Descent%20(v2).pdf
