@@ -10,6 +10,7 @@
 "# 想實作看看的東西"
 * adagrad
 * XOR
+* feature scaling
 
 "# gradient desecnt / stochastic gradient descent"
 * 怎麼做gd http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/Regression%20(v6).pdf (對b的偏微分少乘-1，因為ppt動畫關係)
