@@ -13,16 +13,18 @@
 * feature scaling
 
 "# gradient desecnt / stochastic gradient descent"
-* 怎麼做gd http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/Regression%20(v6).pdf (對b的偏微分少乘-1，因為ppt動畫關係)
-* 怎麼做sgd http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/Gradient%20Descent%20(v2).pdf
+* 你不是已經知道Cost最小值在哪邊了嗎? (那是因為窮舉法 把所有的w值都畫出來) 因為你每次只能看到視野範圍內的東西 (如果有多個w參數 你還能窮舉嗎？) [link](http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015_2/Lecture/DNN%20(v4).pdf#page=47)
+
+* 怎麼做gd [link](http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/Regression%20(v6).pdf) (對b的偏微分少乘-1，因為ppt動畫關係)
+* 怎麼做sgd [link](http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/Gradient%20Descent%20(v2).pdf)
 
 "# mini batch"
-* 怎麼做mini batch #http://stackoverflow.com/questions/38157972/how-to-implement-mini-batch-gradient-descent-in-python
-* mini batch比較快? http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/Keras.pdf
-* mini batch比較快? http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015_2/Lecture/DNN%20(v4).pdf
+* 怎麼做mini batch [link](http://stackoverflow.com/questions/38157972/how-to-implement-mini-batch-gradient-descent-in-python)
+* mini batch比較快? 因為batch比較快，那batch size越大越好??? [link](http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/Keras.pdf#page=18)
+* mini batch比較快? 不同batch size的比較 [link](http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015_2/Lecture/DNN%20(v4).pdf#page=66)
 
 "# 不同learning rate的影響"
-* http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/Gradient%20Descent%20(v2).pdf
+* [link](http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2016/Lecture/Gradient%20Descent%20(v2).pdf#page=5)
 * ![alt tag](http://cs231n.github.io/assets/nn3/learningrates.jpeg)
 
 
