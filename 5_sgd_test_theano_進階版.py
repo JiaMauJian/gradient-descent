@@ -37,8 +37,9 @@ train = theano.function(inputs=[x, y_hat],
 
 # training
 cost_list = []
-for t in range(4):
-    # shuffle idx for Stochastic (不用作也沒關係，有可能data本身就是沒有順序性了)
+epochs = 4
+for t in range(epochs):
+    # 每epoch一次就要記得重新shuffle一次
     idx = np.arange(x_data.shape[0])
     np.random.shuffle(idx)
 
