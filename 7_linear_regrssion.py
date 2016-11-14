@@ -73,21 +73,27 @@ for t in range(epochs):
         batch_num = len(x_batches)
         for i in range(batch_num):        
             results = train(x_batches[i], y_batches[i])
-            #print 'cost=%f, weight=%f' % (results[0], results[1])        
-            costs.append(results[0])
             all_cost += results[0]
-        
-        print 'batch avg cost=%.5f%%' % (all_cost/batch_num)        
+
+        costs.append(all_cost/batch_num)        
+        print 'batch avg cost=%f' % (all_cost/batch_num)        
 
 print 'w=%f, b=%f' % (results[1], results[2])
 
-w = results[1]
-b = results[2]
+### cost chart
+plt.plot(costs)
+plt.ylim([0, 0.2])
+plt.xlabel("No. of parameters updates by batch")
+plt.ylabel("Loss by batch of avg cost")
+plt.show()
 
 #the exact closed-form solution
 #b = 0.7502
 #w = 0.0639
 
+### result chart
+w = results[1]
+b = results[2]
 p1, = plt.plot(x_data, y_data, 'o', label='Training data')
 p2, = plt.plot(x_data, w*x_data + b, 'r-', label='Linear regression')
 plt.legend(handles=[p1, p2], loc=4)
