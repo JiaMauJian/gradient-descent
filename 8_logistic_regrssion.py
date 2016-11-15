@@ -74,8 +74,7 @@ f = theano.function([x], y)
 
 ### cost/error/loss
 y_hat = T.vector()
-#cost = -T.mean(y_hat * T.log(y) + (1 - y_hat) * T.log(1 - y))
-cost = T.mean((y-y_hat)**2)
+cost = -T.mean(y_hat * T.log(y) + (1 - y_hat) * T.log(1 - y))
 
 ### gradients
 def gd(params, grads, lr):
@@ -97,13 +96,13 @@ def training(epochs, x_data, y_data):
         x_batches, y_batches = mk_batches(x_data, y_data, BATCH_SIZE, True)        
         batch_num = len(x_batches)
         for i in range(batch_num):        
-            results = train(x_batches[i], y_batches[i])            
-            all_cost += results[0]
+            tr_cost, tr_w, tr_b = train(x_batches[i], y_batches[i])            
+            all_cost += tr_cost
         
         costs.append(all_cost/batch_num)
     
     print 'avg cost=%f' % (costs[-1])        
-    print 'w1=%f, w2=%f, b=%f' % (results[1][0], results[1][1], results[2])
+    print 'w1=%f, w2=%f, b=%f' % (tr_w[0], tr_w[1], tr_b)
 
     return costs, results
 
@@ -115,14 +114,19 @@ def plot_cost(costs):
     plt.ylabel("Loss by batch of avg cost")
     plt.show()
      
+##################### No feature scaling #####################
+    
 costs, results = training(EPOCHS, x_data, y_data)
 plot_cost(costs)
+        
+##################### After feature scaling #####################
 
-### feature scaling experiment
+# 重新設定權重
 w.set_value(floatX(np.random.randn(2)))
 b.set_value(floatX(np.random.randn(1))[0])
 
 x_data = feature_scaling(x_data)
 print 'mean=%f, std=%f' % (np.mean(x_data), np.std(x_data))
+
 costs, results = training(EPOCHS, x_data, y_data)
 plot_cost(costs)
