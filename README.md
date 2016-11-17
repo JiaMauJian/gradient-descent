@@ -6,11 +6,11 @@
 * 2016/10/26 gd_test_theano_learning_rate.py 比較不同learning rate的影響
 * 2016/11/1 mk_batches.py 練習
 * 2016/11/2 theano進階寫法練習(all data/mini batch/sgd)
+* 2016/11/17 feature scaling (有比較滑喔)
+* 2016/11/17 adagrad 好難寫
 
 "# 想實作看看的東西"
-* adagrad
 * XOR
-* feature scaling
 
 "# gradient desecnt / stochastic gradient descent"
 * 你不是已經知道Cost最小值在哪邊了嗎?  因為你每次只能看到視野範圍內的東西 (os: 那是因為窮舉法 把所有的w值都畫出來，如果有多個w參數 你還能窮舉嗎？) [link](http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015_2/Lecture/DNN%20(v4).pdf#page=47)
