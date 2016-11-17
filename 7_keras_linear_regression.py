@@ -2,9 +2,16 @@
 from keras.models import Sequential
 from keras.layers import Dense, Activation
 from keras.optimizers import SGD
+import keras as k
 import numpy as np
 
+class LossHistory(k.callbacks.Callback):
+    def on_train_begin(self, logs={}):
+        self.losses = []
 
+    def on_batch_end(self, batch, logs={}):
+        self.losses.append(logs.get('loss'))
+        
 # load and prepare the dataset
 x_data = np.loadtxt('.\ex2Data\ex2x.dat')
 y_data = np.loadtxt('.\ex2Data\ex2y.dat')
@@ -16,10 +23,11 @@ model.add(Activation('linear'))
 
 # 2. compile the network
 sgd = SGD(lr=0.01, momentum=0.0, decay=0.0, nesterov=False)
+history = LossHistory()
 model.compile(loss='mse', optimizer=sgd, metrics=['mse'])
 
 # 3. fit the network
-model.fit(x_data, y_data, nb_epoch=1000, batch_size=10, verbose=1, show_accuracy=True)
+model.fit(x_data, y_data, nb_epoch=1000, batch_size=10, callbacks=[history])
 
 ## 4. evaluate the network (loss = accuracy)
 loss, accuracy = model.evaluate(x_data, y_data)
