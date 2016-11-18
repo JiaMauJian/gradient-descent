@@ -68,7 +68,7 @@ b = theano.shared(floatX(np.random.randn(1))[0])
     
 ### model
 x = T.matrix()
-z = T.dot(w, x.T) + b
+z = T.dot(w, x.T) + b.dimshuffle('x')
 y = 1 / (1 + T.exp(-1 * z))
 f = theano.function([x], y)
 
@@ -104,7 +104,7 @@ def training(epochs, x_data, y_data):
     print 'avg cost=%f' % (costs[-1])        
     print 'w1=%f, w2=%f, b=%f' % (tr_w[0], tr_w[1], tr_b)
 
-    return costs, results
+    return costs
 
 # cost chart
 def plot_cost(costs):
@@ -116,7 +116,7 @@ def plot_cost(costs):
      
 ##################### No feature scaling #####################
     
-costs, results = training(EPOCHS, x_data, y_data)
+costs = training(EPOCHS, x_data, y_data)
 plot_cost(costs)
         
 ##################### After feature scaling #####################
@@ -128,5 +128,5 @@ b.set_value(floatX(np.random.randn(1))[0])
 x_data = feature_scaling(x_data)
 print 'mean=%f, std=%f' % (np.mean(x_data), np.std(x_data))
 
-costs, results = training(EPOCHS, x_data, y_data)
+costs = training(EPOCHS, x_data, y_data)
 plot_cost(costs)
