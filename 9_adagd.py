@@ -158,4 +158,3 @@ plt.yscale('log')
 plt.xlabel("No. of parameters updates by batch")
 plt.ylabel("Loss by batch of avg cost (log)")
 plt.show()
-# adagrad不適合做太久
