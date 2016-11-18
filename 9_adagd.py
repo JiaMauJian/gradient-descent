@@ -5,6 +5,7 @@ import theano.tensor as T
 import numpy as np
 import matplotlib.pyplot as plt
 import itertools as it
+import time
 
 def floatX(X):
     return np.asarray(X, dtype=theano.config.floatX)
@@ -103,10 +104,12 @@ f_train = theano.function(inputs=[x, y_hat],
 f_train_adagd = theano.function(inputs=[x, y_hat],
                                 outputs=[cost, w, b],
                                 updates=Adagd([w, b], [dw, db]))
-# training
-his_cost_by_gd = []
+
 epochs = 5000
 
+# training
+his_cost_by_gd = []
+tStart = time.time()
 for t in range(epochs):
         all_cost = 0       
         x_batches, y_batches = mk_batches(x_data, y_data, batch_size, True)        
@@ -118,8 +121,9 @@ for t in range(epochs):
             
         his_cost_by_gd.append(all_cost/batch_num)        
         #print 'batch avg cost=%f' % (all_cost/batch_num)        
-
+tEnd = time.time()
 print '(sgd) w=%f, b=%f' % (tr_w, tr_b)
+print 'It costs %f sec' % (tEnd-tStart)
 
 w.set_value(floatX(-1.))
 b.set_value(floatX(-1.))
@@ -127,6 +131,7 @@ b.set_value(floatX(-1.))
 #b.set_value(floatX(np.random.randn(1))[0])
 
 his_cost_by_adagd = []
+tStart = time.time()
 for t in range(epochs):
         all_cost = 0       
         x_batches, y_batches = mk_batches(x_data, y_data, batch_size, True)        
@@ -139,8 +144,9 @@ for t in range(epochs):
             
         his_cost_by_adagd.append(all_cost/batch_num)        
         #print 'batch avg cost=%f' % (all_cost/batch_num)        
-
+tEnd = time.time()
 print '(Adagd) w=%f, b=%f' % (tr_w, tr_b)
+print 'It costs %f sec' % (tEnd-tStart)
 
 print '(closed-fom) w=0.0639, b= 0.7502'
 
