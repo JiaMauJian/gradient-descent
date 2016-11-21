@@ -105,7 +105,7 @@ f_train_adagd = theano.function(inputs=[x, y_hat],
                                 outputs=[cost, w, b],
                                 updates=Adagd([w, b], [dw, db]))
 
-epochs = 5000
+epochs = 1000
 
 # training
 his_cost_by_gd = []
