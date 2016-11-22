@@ -13,6 +13,7 @@
 "# 想實作看看的東西"
 * rmsprop
 * adam
+* MNIST / t-SNE
 
 "# gradient desecnt / stochastic gradient descent"
 * 你不是已經知道Cost最小值在哪邊了嗎?  因為你每次只能看到視野範圍內的東西 (os: 那是因為窮舉法 把所有的w值都畫出來，如果有多個w參數 你還能窮舉嗎？) [link](http://speech.ee.ntu.edu.tw/~tlkagk/courses/MLDS_2015_2/Lecture/DNN%20(v4).pdf#page=47)
