@@ -47,7 +47,7 @@ train = theano.function(inputs=[x, y_hat],
                         outputs=[y, cost, w, b, w1, b1, w2, b2],
                         updates=gd([w, b, w1, b1, w2, b2], [dw, db, dw1, db1, dw2, db2], 0.01))
 
-for i in range(50000):
+for i in range(100000):
     y1, c1, _w, _b, _w1, _b1, _w2, _b2 = train([0, 0], 0)
     y2, c2, _w, _b, _w1, _b1, _w2, _b2 = train([0, 1], 1)
     y3, c3, _w, _b, _w1, _b1, _w2, _b2 = train([1, 0], 1)
