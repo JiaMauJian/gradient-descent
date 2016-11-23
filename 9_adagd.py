@@ -123,6 +123,7 @@ for t in range(epochs):
         #print 'batch avg cost=%f' % (all_cost/batch_num)        
 tEnd = time.time()
 print '(sgd) w=%f, b=%f' % (tr_w, tr_b)
+print 'Minimum Loss = %f' % (np.min(his_cost_by_gd))
 print 'It costs %f sec' % (tEnd-tStart)
 
 w.set_value(floatX(-1.))
@@ -146,21 +147,16 @@ for t in range(epochs):
         #print 'batch avg cost=%f' % (all_cost/batch_num)        
 tEnd = time.time()
 print '(Adagd) w=%f, b=%f' % (tr_w, tr_b)
+print 'Minimum Loss = %f' % (np.min(his_cost_by_adagd))
 print 'It costs %f sec' % (tEnd-tStart)
 
 print '(closed-fom) w=0.0639, b= 0.7502'
 
 ### cost chart
-plt.plot(his_cost_by_gd[1:500])
-plt.plot(his_cost_by_adagd[1:500])
-plt.yscale('log')
+plt.plot(his_cost_by_gd, label='sgd')
+plt.plot(his_cost_by_adagd, label='adagrad')
+plt.legend()
+plt.ylim([0, 0.4])
 plt.xlabel("No. of parameters updates by batch")
-plt.ylabel("Loss by batch of avg cost (log)")
-plt.show()
-
-plt.plot(his_cost_by_gd)
-plt.plot(his_cost_by_adagd)
-plt.yscale('log')
-plt.xlabel("No. of parameters updates by batch")
-plt.ylabel("Loss by batch of avg cost (log)")
+plt.ylabel("Loss by batch of avg cost")
 plt.show()
