@@ -4,6 +4,7 @@ from keras.layers import Dense, Activation
 from keras.optimizers import SGD
 import keras as k
 import numpy as np
+import matplotlib.pyplot as plt
 
 class LossHistory(k.callbacks.Callback):
     def on_train_begin(self, logs={}):
@@ -19,6 +20,7 @@ y_data = np.loadtxt('.\ex2Data\ex2y.dat')
 # 1. define the network
 model = Sequential()
 model.add(Dense(input_dim=1, output_dim=1, init='normal'))
+#model.add(Dense(input_dim=1, output_dim=1, weights=[np.array([[-1.]], dtype='float32'), np.array([-1.], dtype='float32')] ))
 model.add(Activation('linear'))
 
 # 2. compile the network
@@ -27,7 +29,9 @@ history = LossHistory()
 model.compile(loss='mse', optimizer=sgd, metrics=['mse'])
 
 # 3. fit the network
-model.fit(x_data, y_data, nb_epoch=1000, batch_size=10, callbacks=[history])
+model.fit(x_data, y_data, nb_epoch=1000, batch_size=10, callbacks=[history], verbose=2)
+
+plt.plot(history.losses)
 
 ## 4. evaluate the network (loss = accuracy)
 loss, accuracy = model.evaluate(x_data, y_data)
