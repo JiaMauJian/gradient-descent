@@ -11,10 +11,9 @@
 * 2016/11/22 xor
 * 2016/11/24 rmsprop
 * 2016/11/25 momentum
+* 2016/11/30 adam (好險有Alec Radford寫的程式可以參考)
 
 "# 想實作看看的東西"
-* rmsprop
-* adam
 * MNIST / t-SNE
 
 "# gradient descent有趣的動畫
