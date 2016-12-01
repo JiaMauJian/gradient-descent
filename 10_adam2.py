@@ -72,7 +72,7 @@ his_v_db = []
 def calc_adam(x, y, i):
         
     beta1 = 0.9 # momentum
-    beta2 = 0.999 # rmsprop
+    beta2 = 0.001 # rmsprop
     lr = 0.03
     e=1e-8    
     
@@ -124,7 +124,7 @@ def calc_adam(x, y, i):
 
 ###############################################################################
 ### adam (Alec Radford)
-def Adam2(cost, params, lr=0.03, b1=0.9, b2=0.999, e=1e-8):
+def Adam2(cost, params, lr=0.03, b1=0.9, b2=0.001, e=1e-8):
     updates = []
     grads = T.grad(cost, params)
     i = theano.shared(floatX(0.))
@@ -216,8 +216,11 @@ print '(closed-fom) w=0.0639, b= 0.7502'
 plt.plot(his_cost_by_adam.iloc[:, 0], label='adam')
 plt.plot(his_cost_by_adam2.iloc[:, 0], label='adam (Alec Radford)')
 plt.legend()
+plt.title("learning rate=0.03, beta1=0.9, beta2=0.001")
 plt.xlabel("No. of parameters updates by batch")
 plt.ylabel("Loss by batch of avg cost")
 plt.ylim([0, 0.4])
 #plt.yscale('log')
+plt.savefig('adam.png')
 plt.show()
+
