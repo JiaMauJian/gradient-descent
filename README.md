@@ -1,5 +1,6 @@
 "#李宏毅老師 demo
 https://www.youtube.com/watch?v=1UqCjFQiiy0&feature=youtu.be
+
 "#code for demo
 http://speech.ee.ntu.edu.tw/~tlkagk/courses/ML_2017/demo/GradientDescentDemo.ipynb
 
