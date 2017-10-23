@@ -1,3 +1,6 @@
+"#Normalization (feature scaling)和Transformation是不同的東西不要搞混了
+  * feature scaling是把x都轉換到同樣的scale，transformation是把x對應到y (如x非線性轉成線性)，看影片就明白https://www.youtube.com/watch?v=EJ6EhfenqNs
+  
 "#Normalization (feature scaling)
   1. 很重要也很容易被忽視的小技巧，如mnist dataset中的x為何要除255
   2. x = np.random.random(10000)
