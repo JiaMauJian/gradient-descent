@@ -1,3 +1,8 @@
+"#Normalization (feature scaling)
+  1. 很重要也很容易被忽視的小技巧，如mnist dataset中的x為何要除255
+  2. x = np.random.random(10000)
+     x = (x - np.mean(x)) / np.std(x) -> 轉成normal後就像 x = np.random.normal(0, 1, 10000)
+
 "#李宏毅老師 demo
 https://www.youtube.com/watch?v=1UqCjFQiiy0&feature=youtu.be
 
